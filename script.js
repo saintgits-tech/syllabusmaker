@@ -157,6 +157,16 @@
             }
             coPoMappingGrid.innerHTML = html;
         }
+        function removeCommass(event) {
+            const textarea = event.target;
+            const value = textarea.value;
+            const newValue = value.replace(/,/g, '');  // Remove all commas
+            if (value !== newValue) {
+                textarea.value = newValue;
+                alert("Commas are not allowed.");
+            }
+        }  
+   
 
         // Function to create and populate COPSO Mapping Grid
         function createAndPopulateCopSoMappingGrid(outcomeCount) {
@@ -257,14 +267,5 @@
             }
             return options;
         }
-        function removeCommass(event) {
-            const textarea = event.target;
-            const value = textarea.value;
-            const newValue = value.replace(/,/g, '');  // Remove all commas
-            if (value !== newValue) {
-                textarea.value = newValue;
-                alert("Commas are not allowed.");
-            }
-        }  
-   
+      
    
