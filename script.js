@@ -190,7 +190,7 @@
                 <input type="text" id="modTitle_${i}" name="Module_${i}_Title" required><br>
                 
                 <label for="modContent_${i}">Module ${i} Contents</label>
-                <textarea oninput="removeCommas(event)" id="modContent_${i}" name="Module_${i}_Content" rows="4" cols="50" placeholder="Use '-' as separator between individual topics" required></textarea><br>
+                <textarea oninput="removeCommass(event)" id="modContent_${i}" name="Module_${i}_Content" rows="4" cols="50" placeholder="Use '-' as separator between individual topics" required></textarea><br>
                 
                 <label for="modCO_${i}">CO's mapped to Module ${i}</label>
                 <input type="text" id="modCO_${i}" name="Module_${i}_CO" placeholder="CO1, CO2, ..." required><br>
@@ -257,7 +257,7 @@
             }
             return options;
         }
-        function removeCommas(event) {
+        function removeCommass(event) {
             const textarea = event.target;
             const value = textarea.value;
             const newValue = value.replace(/,/g, '');  // Remove all commas
