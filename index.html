@@ -133,7 +133,7 @@
             </table>
             <div >
                 <label for="zerothModule">Zeroth Module:</label><br>
-                <textarea name="zerothModule" id="zerothModule" rows="6" cols="50" required placeholder="Module 0 Contents"></textarea><br>
+                <textarea oninput="removeCommas(event)" name="zerothModule" id="zerothModule" rows="6" cols="50" required placeholder="Module 0 Contents"></textarea><br>
             <label for="ModuleCount">Module Count:</br>
             <select name="ModuleCount" id="ModuleCount" required>
                 <option value="select" selected disabled hidden>select</option>
@@ -253,7 +253,15 @@
                                    '<td><textarea name="ExerciseCO_' + (table.rows.length - 1) + '" placeholder="CO Mapped" required rows="3" cols="50"></textarea></td>';
             }
         });
-       
+        function removeCommas(event) {
+            const textarea = event.target;
+            const value = textarea.value;
+            const newValue = value.replace(/,/g, '');  // Remove all commas
+            if (value !== newValue) {
+                textarea.value = newValue;
+                alert("Commas are not allowed.");
+            }
+        }  
        
     </script>
      <script src="script.js" ></script>
